@@ -1,8 +1,8 @@
-###  DATE: 
+###  DATE: 23/2/2024
 
-###  NAME: 
-###  ROLL NO :
-###  DEPARTMENT: 
+###  NAME: K SAGAR KRISHNA
+###  ROLL NO : 212222110037
+###  DEPARTMENT: CSE(IOT)
 
 
 # EXPERIMENT--02-INTERFACING-A-DIGITAL-INPUT-TO-IOT-DEVELOPMENT-BOARD-
@@ -77,11 +77,42 @@ The full form of an ARM is an advanced reduced instruction set computer (RISC) m
 
 
 ## STM 32 CUBE PROGRAM :
+```
+#include"stdio.h"
+#include"stdbool.h"
+bool IRSENSOR;
+void irpair();
+while(1)
+{
+irpair();
+}
+void irpair()
+{
+IRSENSOR=HAL_GPIO_ReadPin(GPIO,GPIO_PIN_4);
+if(IRSENSOR==0)
+{
+   HAL_GPIO_WritePin(GPIO,GPIO_PIN_0,RESET);  
+   HAL_Delay(1000);
+   HAL_GPIO_WritePin(GPIO,GPIO_PIN_0,SET);
+                    HAL_Delay(1000);
+}
+else
+{
+HAL_GPIO_WritePin(GPIO, GPIO_PIN_0,RESET);
+                HAL_Delay(1000);
+}
+```
 
 
 
 ## Output  :
- 
+# WITHOUT OBSTACLE
+ ![WhatsApp Image 2024-02-23 at 6 58 05 PM](https://github.com/vasanthkumarch/EXPERIMENT--02-INTERFACEING-A-DIGITAL-INPUT-TO-IOT-DEVELOPMENT-BOARD-/assets/121165786/1f12a449-8ea4-4064-838b-a2386aa48d36)
+
+ # WITH OBSTACLE
+ ![WhatsApp Image 2024-02-23 at 9 46 51 AM](https://github.com/Yuvakrishna0/EXPERIMENT--02-INTERFACEING-A-DIGITAL-INPUT-TO-IOT-DEVELOPMENT-BOARD-/assets/117915037/6503e000-d40d-464a-9a26-ecad1c610fd2)
+
+
  
  
  
